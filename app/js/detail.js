@@ -5,6 +5,15 @@ $(document).ready(function() {
     var fotorama = $fotoramaDiv.data('fotorama');
     $("#light-overlay").hide();
 
+    $('.fotorama').on("fotorama:fullscreenenter", function() {
+        fotorama.startAutoplay(2000);
+        audioElement.play();
+    });
+    $('.fotorama').on("fotorama:fullscreenexit", function() {
+        fotorama.stopAutoplay();
+        audioElement.pause();
+    });
+
     $("#enable").on("click", function() {
         $(this).hide();
         $("#light-overlay").show();
