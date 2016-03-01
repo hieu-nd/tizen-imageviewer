@@ -273,6 +273,8 @@ nav>ul>li a span.fa {
     width: calc(100% - 170px);
     height: 100%;
     padding: 20px;
+    position: relative;
+    z-index: 1000;
 }
 
 #right-coontainer h2 {
@@ -982,13 +984,54 @@ a.active {
 .control-effect li {
     float: left;
     width: 50px;
+    text-align: center;
 }
 
 .control-effect img {
     width: 30px;
     height: auto;
-    ;
+    cursor: pointer;
+    border-radius: 50%;
 }
-.opacity{
+
+.opacity {
     opacity: 0.5;
+}
+
+.imageflipped {
+    -moz-transform: scaleX(-1) !important;
+    -o-transform: scaleX(-1) !important;
+    -webkit-transform: scaleX(-1) !important;
+    transform: scaleX(-1) !important;
+    filter: FlipH !important;
+    -ms-filter: "FlipH" !important;
+}
+
+.rotate90 {
+     -webkit-transform: rotate(90deg) !important;
+    -moz-transform: rotate(90deg) !important;
+    -o-transform: rotate(90deg) !important;
+    -ms-transform: rotate(90deg) !important;
+    transform: rotate(90deg) !important;
+}
+.rotate180 {
+     -webkit-transform: rotate(180deg) !important;
+    -moz-transform: rotate(180deg) !important;
+    -o-transform: rotate(180deg) !important;
+    -ms-transform: rotate(180deg) !important;
+    transform: rotate(180deg) !important;
+}
+.rotate270 {
+     -webkit-transform: rotate(270deg) !important;
+    -moz-transform: rotate(270deg) !important;
+    -o-transform: rotate(270deg) !important;
+    -ms-transform: rotate(270deg) !important;
+    transform: rotate(270deg) !important;
+}
+.rotate360 {
+     -webkit-transform: rotate(360deg) !important;
+    -moz-transform: rotate(360deg) !important;
+    -o-transform: rotate(360deg) !important;
+    -ms-transform: rotate(360deg) !important;
+    transform: rotate(360deg) !important;
 }
