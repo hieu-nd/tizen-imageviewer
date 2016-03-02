@@ -9,9 +9,53 @@ $(document).ready(function() {
         fotorama.startAutoplay(2000);
         audioElement.play();
     });
+
+
     $('.fotorama').on("fotorama:fullscreenexit", function() {
         fotorama.stopAutoplay();
         audioElement.pause();
+    });
+
+    $('.fotorama').on("fotorama:show", function() {
+        var ramdom = Math.floor((Math.random() * 5) + 1);
+
+
+
+        switch (ramdom) {
+            case 1:
+                $(this).children().fadeOut();
+                $(this).children().fadeIn();
+                break;
+            case 2:
+                $(this).children().animate({
+                    width: 'toggle'
+                });
+                break;
+            case 3:
+                $(this).children().animate({ borderSpacing: -360 }, {
+                    step: function(now, fx) {
+                        $(this).children().css('-webkit-transform', 'rotate(' + now + 'deg)');
+                        $(this).children().css('-moz-transform', 'rotate(' + now + 'deg)');
+                        $(this).children().css('transform', 'rotate(' + now + 'deg)');
+                    },
+                    duration: 'slow'
+                }, 'linear');
+                break;
+            case 4:
+                $(this).children().animate({
+                    height: 'toggle'
+                });
+                break;
+            default:
+                break;
+        }
+
+
+
+    });
+
+    $('.fotorama').on("fotorama:showend", function() {
+        $(this).children().fadeIn();
     });
 
     $("#enable").on("click", function() {
