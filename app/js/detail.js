@@ -65,6 +65,8 @@ $(document).ready(function() {
         audioElement.play();
 
         fotorama.startAutoplay(2000);
+        $("#disable").removeAttr("class");
+        $("#enable").addClass("displaynoe");
     })
     $("#disable").on("click", function() {
         $(this).hide();
@@ -72,7 +74,10 @@ $(document).ready(function() {
         $("#enable").show();
         audioElement.pause();
         fotorama.stopAutoplay();
+        $("#enable").removeAttr("class");
+        $("#disable").addClass("displaynoe");
     })
+
 
     $("#div-flip").on("click", function() {
         $(imageactive).removeClass("imageflipped");
@@ -84,6 +89,65 @@ $(document).ready(function() {
             $(imageactive).addClass("imageflipped");
         }
     })
+
+
+
+    $(document).on("keydown", function(e) {
+        var activeNode = $(document.activeElement);
+        var activebutton = $(".active");
+
+
+        switch (e.which) {
+            case 13:
+                $(activebutton).click();
+
+                if ($("#enable").hasClass("displaynoe")) {
+                    $("#disable").click();
+                } else {
+                    $("#enable").click();
+                }
+                //Enter
+                break;
+            case 37:
+                //Prev
+                $("#div-rotate").removeClass("active");
+                $("#div-flip").focus();
+                $("#div-flip").addClass("active");
+                break;
+            case 39:
+                //Next
+                $("#div-flip").removeClass("active");
+                $("#div-rotate").focus();
+                $("#div-rotate").addClass("active");
+                break;
+            case 38:
+
+                //Up
+
+                break;
+            case 40:
+                //Down
+                $("#div-flip").focus();
+                $("#div-flip").addClass("active");
+                break;
+
+            case 415:
+                $("#enable").click();
+                break;
+            case 413:
+
+                $("#disable").click();
+                break;
+            case 10009:
+
+                window.location.href = "index.html";
+                break;
+
+
+        }
+    });
+
+
     var i = 0;
     $("#div-rotate").on("click", function() {
         i += 1;

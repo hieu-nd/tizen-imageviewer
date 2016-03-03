@@ -976,7 +976,7 @@ a.active {
 }
 
 .control-effect {
-    width: 110px;
+    width: 150px;
     margin: 0 auto;
     margin-top: 20px;
 }
@@ -985,6 +985,8 @@ a.active {
     float: left;
     width: 50px;
     text-align: center;
+    border-radius: 1px solid white;
+    padding: 10px;
 }
 
 .control-effect img {
@@ -1008,30 +1010,62 @@ a.active {
 }
 
 .rotate90 {
-     -webkit-transform: rotate(90deg) !important;
+    -webkit-transform: rotate(90deg) !important;
     -moz-transform: rotate(90deg) !important;
     -o-transform: rotate(90deg) !important;
     -ms-transform: rotate(90deg) !important;
     transform: rotate(90deg) !important;
 }
+
 .rotate180 {
-     -webkit-transform: rotate(180deg) !important;
+    -webkit-transform: rotate(180deg) !important;
     -moz-transform: rotate(180deg) !important;
     -o-transform: rotate(180deg) !important;
     -ms-transform: rotate(180deg) !important;
     transform: rotate(180deg) !important;
 }
+
 .rotate270 {
-     -webkit-transform: rotate(270deg) !important;
+    -webkit-transform: rotate(270deg) !important;
     -moz-transform: rotate(270deg) !important;
     -o-transform: rotate(270deg) !important;
     -ms-transform: rotate(270deg) !important;
     transform: rotate(270deg) !important;
 }
+
 .rotate360 {
-     -webkit-transform: rotate(360deg) !important;
+    -webkit-transform: rotate(360deg) !important;
     -moz-transform: rotate(360deg) !important;
     -o-transform: rotate(360deg) !important;
     -ms-transform: rotate(360deg) !important;
     transform: rotate(360deg) !important;
+}
+
+#div-flip,
+#div-rotate {
+    cursor: pointer;
+}
+
+.active {
+    border: 1px solid green;
+}
+
+.active {
+    border: 1px solid green;
+}
+
+#div-flip:focus {
+    border: 1px solid green;
+}
+
+#div-rotate:focus {
+    border: 1px solid green;
+}
+
+#div-flip:hover {
+    border: 1px solid green;
+}
+
+#div-rotate:hover {
+    border: 1px solid green;
 }
