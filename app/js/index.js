@@ -4,11 +4,27 @@ $(document).ready(function() {
     $("#tabs-1 div ul li:first div a").focus();
     $("#tabs-1 div ul li:first div a").addClass("active");
 
+
+
+    $("#tab1").on("click", function() {
+       
+        $("#tabs-1 div ul li:first div a").focus();
+        $("#tabs-1 div ul li:first div a").addClass("active");
+    });
+
+    $("#tab2").on("click", function() {
+        
+        $("#tabs-2 div ul li:first div a").focus();
+        $("#tabs-2 div ul li:first div a").addClass("active");
+    });
+    $("#tab3").on("click", function() {
+      
+        $("#tabs-3 div ul li:first div a").focus();
+        $("#tabs-3 div ul li:first div a").addClass("active");
+    });
+
     $(document).on("keydown", function(e) {
         var activeNode = $(document.activeElement);
-
-
-
         switch (e.which) {
             case 13:
                 //enter
@@ -28,12 +44,17 @@ $(document).ready(function() {
                 break;
             case 38:
 
+                // $("#tab3 a").click();
+                // $("#tabs-3 div ul li:first div a").focus();
+                // $("#tabs-3 div ul li:first div a").addClass("active");
                 //Up
 
                 e.preventDefault();
                 break;
             case 40:
-
+                // $("#tab2 a").click();
+                // $("#tabs-2 div ul li:first div a").focus();
+                // $("#tabs-2 div ul li:first div a").addClass("active");
                 //Down
 
                 e.preventDefault();
@@ -45,18 +66,18 @@ $(document).ready(function() {
                 break;
             case 404:
 
-                $("#tab1").click();
+                $("#tab1 a").click();
                 $("#tabs-1 div ul li:first div a").focus();
                 $("#tabs-1 div ul li:first div a").addClass("active");
                 break;
             case 405:
-                $("#tab2").click();
+                $("#tab2 a").click();
                 $("#tabs-2 div ul li:first div a").focus();
-                $("#tabs-3 div ul li:first div a").addClass("active");
+                $("#tabs-2 div ul li:first div a").addClass("active");
                 break;
             case 406:
 
-                $("#tab3").click();
+                $("#tab3 a").click();
                 $("#tabs-3 div ul li:first div a").focus();
                 $("#tabs-3 div ul li:first div a").addClass("active");
                 break;

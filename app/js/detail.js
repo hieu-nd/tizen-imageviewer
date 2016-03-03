@@ -7,13 +7,16 @@ $(document).ready(function() {
 
     $('.fotorama').on("fotorama:fullscreenenter", function() {
         fotorama.startAutoplay(2000);
-        audioElement.play();
+        if (!$("#disable").hasClass("displaynoe")) {
+
+            audioElement.play();
+        }
     });
 
 
     $('.fotorama').on("fotorama:fullscreenexit", function() {
         fotorama.stopAutoplay();
-        audioElement.pause();
+        // audioElement.pause();
     });
 
     $('.fotorama').on("fotorama:show", function() {
@@ -101,38 +104,54 @@ $(document).ready(function() {
             case 13:
                 $(activebutton).click();
 
-                if ($("#enable").hasClass("displaynoe")) {
-                    $("#disable").click();
-                } else {
-                    $("#enable").click();
+
+                if (activebutton.length < 1) {
+                    if ($("#enable").hasClass("displaynoe")) {
+                        $("#disable").click();
+                    } else {
+                        $("#enable").click();
+                    }
                 }
+
                 //Enter
                 break;
             case 37:
                 //Prev
-                $("#div-rotate").removeClass("active");
-                $("#div-flip").focus();
-                $("#div-flip").addClass("active");
+                // $("#div-rotate").removeClass("active");
+                // $("#div-flip").focus();
+                // $("#div-flip").addClass("active");
                 break;
             case 39:
                 //Next
-                $("#div-flip").removeClass("active");
-                $("#div-rotate").focus();
-                $("#div-rotate").addClass("active");
+                // $("#div-flip").removeClass("active");
+                // $("#div-rotate").focus();
+                // $("#div-rotate").addClass("active");
                 break;
             case 38:
-
+                $("#disable").focus();
+                $("#disable").parent().parent().addClass("actives");
+                $("#enable").focus();
+                $("#enable").parent().parent().addClass("actives");
                 //Up
-
+                $("#div-rotate").removeClass("active");
+                $("#div-flip").removeClass("active");
                 break;
             case 40:
                 //Down
-                $("#div-flip").focus();
-                $("#div-flip").addClass("active");
+                if ($("#div-flip").hasClass("active")) {
+                    $("#div-flip").removeClass("active");
+                    $("#div-rotate").focus();
+                    $("#div-rotate").addClass("active");
+                } else {
+                    $("#div-rotate").removeClass("active");
+                    $("#div-flip").focus();
+                    $("#div-flip").addClass("active");
+                }
+
                 break;
 
             case 415:
-                $("#enable").click();
+                fotorama.startAutoplay(2000);
                 break;
             case 413:
 

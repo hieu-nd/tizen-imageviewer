@@ -223,11 +223,12 @@ nav>ul>li {
     padding: 6px 0;
 }
 
-nav>ul>li.active {
+nav>ul>li.actives {
     display: block;
+    border: none;
 }
 
-nav>ul>li.active a {
+nav>ul>li.actives a {
     border-left-color: #ff3e18;
     opacity: 1;
     filter: alpah(opacity=100);
