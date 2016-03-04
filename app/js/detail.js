@@ -8,7 +8,6 @@ $(document).ready(function() {
     $('.fotorama').on("fotorama:fullscreenenter", function() {
         fotorama.startAutoplay(2000);
         if (!$("#disable").hasClass("displaynoe")) {
-
             audioElement.play();
         }
     });
@@ -151,6 +150,7 @@ $(document).ready(function() {
                 break;
 
             case 415:
+                fotorama.requestFullScreen();
                 fotorama.startAutoplay(2000);
                 break;
             case 413:

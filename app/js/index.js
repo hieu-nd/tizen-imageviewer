@@ -7,28 +7,32 @@ $(document).ready(function() {
 
 
     $("#tab1").on("click", function() {
-       
+
         $("#tabs-1 div ul li:first div a").focus();
         $("#tabs-1 div ul li:first div a").addClass("active");
     });
 
     $("#tab2").on("click", function() {
-        
+
         $("#tabs-2 div ul li:first div a").focus();
         $("#tabs-2 div ul li:first div a").addClass("active");
     });
     $("#tab3").on("click", function() {
-      
+
         $("#tabs-3 div ul li:first div a").focus();
         $("#tabs-3 div ul li:first div a").addClass("active");
     });
 
     $(document).on("keydown", function(e) {
         var activeNode = $(document.activeElement);
+
+        var activeNodeActive = $(".active");
         switch (e.which) {
             case 13:
                 //enter
+                activeNodeActive.click();
                 $(activeNode).click();
+
                 break;
             case 37:
                 //Prev
